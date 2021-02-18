@@ -16,7 +16,7 @@ def return_time():
 @cross_origin()
 def test():
     value = str(time.time())
-    return jsonify({"value": "test is okok!!"})
+    return jsonify({"value": "test is okok1!!"})
 
 @app.route('/test1' , methods=['GET'])
 @cross_origin()
