@@ -32,7 +32,7 @@ steps:
    'app=gcr.io/oceanic-craft-302516/test:master'
   ]
   env:
-  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c
+  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
   - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1'
 # push images to Google Container Registry with tags
 images: [
