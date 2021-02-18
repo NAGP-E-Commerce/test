@@ -21,7 +21,7 @@
   args:
     - '-c'
     - |
-      kubectl set image deployment/app app=gcr.io/oceanic-craft-302516/test:latest
+      kubectl set image app=gcr.io/oceanic-craft-302516/test:latest
   volumes:
     - name: 'kube'
       path: /kube
