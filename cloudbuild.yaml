@@ -1,0 +1,6 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/oceanic-craft-302516/test', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/oceanic-craft-302516/test']
+images: ['gcr.io/oceanic-craft-302516/test']
