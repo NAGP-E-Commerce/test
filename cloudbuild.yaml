@@ -1,21 +1,9 @@
 steps:
-#step 1
-- name: 'gcr.io/cloud-builders/docker' 
-  entrypoint: 'bash'
-  args: [
-   '-c', 
-   'docker pull gcr.io/oceanic-craft-302516/test:latest || exit 0'
-  ]
-#step 2
-- name: gcr.io/cloud-builders/docker
-  args: [
-   'build', 
-   '-t', 
-   'gcr.io/oceanic-craft-302516/test:master',
-   '-t', 
-   'gcr.io/oceanic-craft-302516/test:latest',
-   '.'
-  ]
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/oceanic-craft-302516/test', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/oceanic-craft-302516/test']
+images: ['gcr.io/oceanic-craft-302516/test']
 #step 3
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['apply', '-f', 'deployment.yml']
