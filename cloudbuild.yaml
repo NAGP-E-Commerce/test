@@ -1,3 +1,9 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/oceanic-craft-302516/test', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/oceanic-craft-302516/test']
+  
 - id: 'configure kubectl'
   name: 'gcr.io/cloud-builders/gcloud'
   env:
@@ -21,17 +27,12 @@
   args:
     - '-c'
     - |
-      kubectl set image app=gcr.io/oceanic-craft-302516/test:latest
+      kubectl set image deployment/app app=gcr.io/oceanic-craft-302516/test:latest
   volumes:
     - name: 'kube'
       path: /kube
 
 
 
-# steps:
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['build', '-t', 'gcr.io/oceanic-craft-302516/test', '.']
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['push', 'gcr.io/oceanic-craft-302516/test']
-# images: ['gcr.io/oceanic-craft-302516/test']
+
 
