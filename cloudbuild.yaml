@@ -3,7 +3,7 @@ steps:
   args: ['build', '-t', 'gcr.io/oceanic-craft-302516/test', '.']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/oceanic-craft-302516/test']
-  images: ['gcr.io/oceanic-craft-302516/test']
+  #images: ['gcr.io/oceanic-craft-302516/test']
 #step 3
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['apply', '-f', 'deployment.yml']
