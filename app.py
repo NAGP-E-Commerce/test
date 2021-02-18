@@ -16,12 +16,12 @@ def return_time():
 @cross_origin()
 def test():
     value = str(time.time())
-    return jsonify({"value": "hello world ..this is test!!"})
+    return jsonify({"value": "hello world ..this is test!!!!"})
 
 @app.route('/test1' , methods=['GET'])
 @cross_origin()
 def test1():
     value = str(time.time())
-    return jsonify({"value": "you are surely ok!!"})
+    return jsonify({"value": "you are surely ok!!!!!"})
 
 app.run(port=5001,host='0.0.0.0',debug=True)
