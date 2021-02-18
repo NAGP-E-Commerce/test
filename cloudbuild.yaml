@@ -22,7 +22,7 @@ steps:
   args:
     - '-c'
     - |
-      kubectl set image deployment/app app=registry.serverlessmovies.com/mlabouardy/app:$SHORT_SHA
+      kubectl set image deployment/app app=gcr.io/oceanic-craft-302516/test:latest
   volumes:
     - name: 'kube'
       path: /kube  
