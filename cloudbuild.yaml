@@ -1,9 +1,4 @@
 steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/oceanic-craft-302516/test', '.']
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/oceanic-craft-302516/test']
-  
 - id: 'configure kubectl'
   name: 'gcr.io/cloud-builders/gcloud'
   env:
@@ -33,6 +28,10 @@ steps:
       path: /kube
 
 
-
+# steps:
+# - name: 'gcr.io/cloud-builders/docker'
+#   args: ['build', '-t', 'gcr.io/oceanic-craft-302516/test', '.']
+# - name: 'gcr.io/cloud-builders/docker'
+#   args: ['push', 'gcr.io/oceanic-craft-302516/test']
 
 
