@@ -7,8 +7,8 @@ steps:
 - id: 'configure kubectl'
   name: 'gcr.io/cloud-builders/gcloud'
   env:
-    - 'CLOUDSDK_COMPUTE_ZONE=${_CLOUDSDK_COMPUTE_ZONE}'
-    - 'CLOUDSDK_CONTAINER_CLUSTER=${_CLOUDSDK_CONTAINER_CLUSTER}'
+    - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1'
     - 'KUBECONFIG=/kube/config'
   entrypoint: 'sh'
   args:
