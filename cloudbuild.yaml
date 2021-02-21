@@ -1,15 +1,15 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/oceanic-craft-302516/test', '.']
+  args: ['build', '-t', 'gcr.io/ecom-305510/test', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/oceanic-craft-302516/test']
+  args: ['push', 'gcr.io/ecom-305510/test']
   #images: ['gcr.io/oceanic-craft-302516/test']
 #step 3
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['apply', '-f', 'deployment.yml']
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-2'
 #step 4
 - name: 'gcr.io/cloud-builders/kubectl'
   args: [
@@ -17,14 +17,14 @@ steps:
    'image', 
    'deployment', 
    'app', 
-   'app=gcr.io/oceanic-craft-302516/test'
+   'app=gcr.io/ecom-305510/test'
   ]
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-2'
 # push images to Google Container Registry with tags
 images: [
-   'gcr.io/oceanic-craft-302516/test:latest'
+   'gcr.io/ecom-305510/test:latest'
   ]
 
 
