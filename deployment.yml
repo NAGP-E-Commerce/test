@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: gcr.io/ecom-305510/test:latest
+        image: gcr.io/oceanic-craft-302516/test:latest
         ports:
         - containerPort: 5001
         imagePullPolicy: Always
